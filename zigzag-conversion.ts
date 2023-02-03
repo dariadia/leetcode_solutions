@@ -28,11 +28,8 @@ function convert(s: string, numRows: number): string {
         currRow += ascending ? 1 : -1;
         rows[currRow] += s[i];
 
-        if (currRow === numRows - 1) {
-            ascending = false;
-        } else if (currRow === 0) {
-            ascending = true;
-        }
+        if (currRow === numRows - 1) ascending = false;
+        else if (currRow === 0) ascending = true;
     }
 
     return rows.join('');
