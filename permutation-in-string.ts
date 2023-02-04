@@ -9,8 +9,6 @@
 // 3. As we reduce size of window, our window may no longer contain all characters of s1.
 // Then, we go back to step(1) and repeat the process. We do this until the end of array.
 
-
-
 function checkInclusion(s1: string, s2: string): boolean {
   // If s1 is larger than s2 then match is not possible
   if (s1.length > s2.length) return false; 
