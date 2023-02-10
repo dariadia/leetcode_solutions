@@ -10,10 +10,10 @@
 
 // Algo: 
 // Create an object map that maps each letter to a set of all suffixes of words in idea that start with it, 
-// and initialize a variable result to 0.
+// and initialize a variable count (result) to 0.
 // Compare each letter's set to all following sets in map. For sets A and B:
-// Store the number of mutual suffixes from both sets in a variable mut.
-// Add 2 * ( dict[A].size - mut ) * ( dict[B].size - mut ) to res.
+// Store the number of mutual suffixes from both sets in a variable sameCount.
+// Add 2 * ( dict[A].size - sameCount ) * ( dict[B].size - sameCount ) to res.
 // Return result.
 
 
