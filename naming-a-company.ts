@@ -9,6 +9,13 @@
 // Return the number of distinct valid names for the company.
 
 // Algo: 
+// Create an object map that maps each letter to a set of all suffixes of words in idea that start with it, 
+// and initialize a variable result to 0.
+// Compare each letter's set to all following sets in map. For sets A and B:
+// Store the number of mutual suffixes from both sets in a variable mut.
+// Add 2 * ( dict[A].size - mut ) * ( dict[B].size - mut ) to res.
+// Return result.
+
 
 function distinctNames(ideas: string[]): number {
     let map = {}
@@ -37,3 +44,6 @@ function distinctNames(ideas: string[]): number {
 
     return count;
 };
+
+// Time complexity: O(n)
+// Space complexity: O(n)
