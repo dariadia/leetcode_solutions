@@ -9,34 +9,34 @@
 // change the car and ride with another representative. The cost of traveling between two cities is one liter of fuel.
 // Return the minimum number of liters of fuel to reach the capital city.
 
-// Algo: 
+// Algo: DFS, a dictionary graph is used to store the neighbors of each node.
+// Perform the DFS from the capital city: 
+// The dfs function is called with the capital city as the starting node and its parent set as -1. 
+// The DFS is performed to calculate the number of people present in each city.
+// Calculate the number of cars required: 
+// if the current node is not the capital city
+// the number of cars required is calculated as the ceiling value of the number of people present in the city 
+// divided by the number of seats in each car.
 
 function minimumFuelCost(roads: number[][], seats: number): number {
-    let n = roads.length + 1
-    if (roads.length == 0) return 0
-
-    let adj = new Array(n).fill(0).map(() => [])
-
+    let graph = new Array(roads.length+1).fill(0).map(()=>[]);
     for (let road of roads) {
-        adj[road[0]].push(road[1])
-        adj[road[1]].push(road[0])
+        graph[road[0]].push(road[1]);
+        graph[road[1]].push(road[0]);
     }
-
-    let res = 0
-    let dfs = function (node, parent) {
-        let representatives = 0
-        for (let neighbor of adj[node]) {
-            if (parent == neighbor) continue
-            representatives += dfs(neighbor, node)
+    var cars = 0 ;
+    function dfs(node , parent){
+        let people = 1;
+        for(let child of graph[node]){
+            if (child === parent) continue;
+            people += dfs(child , node);
         }
-        if (node == 0) return 0
-        representatives++
-        res += Math.ceil(representatives/seats)
-        return representatives
+        if(node != 0)
+            cars += Math.ceil(people/seats);
+        return people;
     }
-
-    dfs(0, -1)
-    return res
+    dfs(0 , -1);
+    return cars;
 };
 
 // Time complexity: O(n)
