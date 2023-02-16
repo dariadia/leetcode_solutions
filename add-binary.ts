@@ -1,14 +1,15 @@
 // Task 67. Add Binary
 // Given two binary strings a and b, return their sum as a binary string.
 
-let addBinary = (a, b) => {
-  // Truth Table
+// Algo: we can use built-in Bigin, but a cleaner solution is with "carry" 
+// Start from the last element, do "school-like" math
   // 1st + 2nd + carry = sum, new carry, decimal sum
   //   0 +  0  + 0 = 0, 0 (0)
   //   0 +  0  + 1 = 1, 0 (1)
   //   0 +  1  + 1 = 0, 1 (2)
   //   1 +  1  + 1 = 1, 1 (3)
 
+let addBinary = (a, b) => {
   let carry = 0;
   let result = '';
 
@@ -28,3 +29,5 @@ let addBinary = (a, b) => {
   return result;
 };
       
+// Time complexity: O(N)
+// Space complexity: O(1)
