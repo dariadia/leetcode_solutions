@@ -4,7 +4,7 @@
 // Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within days days.
 
 // Algo: binary Search
-// perform it on every weight given to check if passes
+// perform it for every weight to see if passes
 
 const daysNeeded = (weights, capacity): number => {
     // start with 0 bc we have not loaded anything on our ship yet
