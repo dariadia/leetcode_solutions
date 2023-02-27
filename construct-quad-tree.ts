@@ -18,7 +18,17 @@
  * };
  */
  
- // Algo: recursive
+// Algo: recursive
+// If length is one, 
+// return a new leaf node with value equal to the cell value at (x1, y1).
+// Otherwise, make a recursive call to the four sub-matrices:
+// If all the four nodes returned 
+// by the above recursive calls are leaf nodes 
+// with the same value. 
+// Then return a new leaf node with the same value.
+// Otherwise, return a non-leaf node 
+// with any value having child pointers pointing 
+// to the four above-returned nodes.
 
 var construct = function(grid) {
     const len = grid.length;
