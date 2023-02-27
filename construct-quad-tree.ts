@@ -17,6 +17,8 @@
  *    this.bottomRight = bottomRight;
  * };
  */
+ 
+ // Algo: recursive
 
 var construct = function(grid) {
     const len = grid.length;
