@@ -10,6 +10,36 @@
 // Algo: BFS: use 2 queue to preform
 // cur and next to keep track on the current node we are checking
 
+// x represents being checked in this round,
+// while n represents the JumpNode be checked in the next round
+
+// Round 0
+cur = [0]
+
+idx = [0, 1, 2, 3, 4, 5, 6, 7] // because the map contains idx0, it will
+val = [0, 1, 2, 0, 5, 6, 1, 3] // still be added to the next, but we will 
+       x  n     n              // skip it during the process
+
+// Round 1
+cur = [0, 1, 3]
+
+idx = [0, 1, 2, 3, 4, 5, 6, 7]
+val = [0, 1, 2, 0, 5, 6, 1, 3]
+//     x  x  n  x  n     n
+
+// Round 2
+cur = [1, 2, 4, 6]
+idx = [0, 1, 2, 3, 4, 5, 6, 7]
+val = [0, 1, 2, 0, 5, 6, 1, 3]
+//     x  x  x  x  x  n  x  n
+
+
+// Round 3
+cur = [2, 4, 5, 7]
+idx = [0, 1, 2, 3, 4, 5, 6, 7]
+val = [0, 1, 2, 0, 5, 6, 1, 3]
+//     x  x  x  x  x  x  x  x
+
 type JumpNode = {
     val: number;
     used: boolean;
