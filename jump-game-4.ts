@@ -10,6 +10,10 @@
 // Algo: BFS: use 2 queue to preform
 // cur and next to keep track on the current node we are checking
 
+// not visit all rooutes but - checked one index, 
+// we do not need to check it again. 
+// mark the index as visited by storing them in a visited set.
+
 // x represents being checked in this round,
 // while n represents the JumpNode be checked in the next round
 
