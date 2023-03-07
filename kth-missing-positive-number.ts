@@ -4,6 +4,8 @@
 
 // Algo: binary search
 // to find the index i of the kth missing positive integer.
+// the array is sorted, which means we expect 1 at index 0
+// so the k-th number would be off-place by k
 
 function findKthPositive(arr: number[], k: number): number {
     let l=0, r=arr.length;
