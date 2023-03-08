@@ -31,5 +31,5 @@ function minEatingSpeed(piles: number[], h: number): number {
     return startk;
 };
                         
-Time: O(logn)
+Time: O(n x logn)
 Space: O(1)
